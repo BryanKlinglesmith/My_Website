@@ -1,0 +1,389 @@
+// Imports from Partials
+@import 'partials/image-modal';
+
+
+/* =================================
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+    margin: 0;
+}
+
+h1 {
+    &.name {
+    margin: 0;
+    }//*This had to be added to get rid of the margin around Bryan Klinglesmith in the navagation bar to make it look even*/
+
+    &.headline{
+        text-align: center;
+        font-size: 3em;
+    }
+    
+    &.project-gallery{
+        margin: 0;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*} this removes underlines and other markings from a list*/
+a {
+    text-decoration: none;
+}
+
+.tagline {
+    text-align: center;
+}
+
+
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/*using flexbox instead of floats to position my rows and columns
+I'm making the entire body a flex container and making the direction
+a column so everything is positioned for mobile first styling.
+The min-height is used for making a sticky footer with flexbox.
+100vh means the columns are as big as the browser and the footer
+is at the bottom even if there isn't enough content to fill the page.'*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*adds border around the navbar elements*/
+ul > li {
+    border: solid black;
+    margin-right: .3em;
+}
+
+input {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 1em;
+}
+
+p.explanation {
+    margin: 0;
+}
+
+.main-container {
+    flex: 1;
+}
+
+.banner,
+.welcome,
+.main-footer {
+    display: flex;
+}
+
+
+/*this is to make my image an oval and to allow it to be positioned in the center of the screen*/
+.my-image {
+    display: block;
+    height: 150px;
+    width: 110px;
+    border-radius: 50%;
+}
+
+.welcome{
+    flex-direction: column;
+}
+
+.banner {
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.primary {
+    padding: 20px;
+    flex-wrap: wrap;
+    border: solid black;    
+}
+
+.secondary {
+    padding: 20px;
+    border: solid black;
+    margin-left: .1em;
+}
+
+.secondary > h2 {
+    margin: auto;
+    text-align: center;
+}
+
+.twitter-timeline {
+    margin: auto;
+}
+
+
+/*adjusting the color of the text in the banner and the 2 columns of text*/
+.banner,
+.row {
+    color: #3a3a3a;
+}
+
+/* ---- Navigation ---- */
+
+.name a{
+	font-size: .7em;
+	margin: 0;
+    color: #000;
+}
+
+.main-nav {
+    margin-top: 5px;
+    display: none;
+}
+
+
+.name a,
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+
+.main-nav a {
+	font-size: .8em;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+    /* color: #fff; */
+    text-align: center;
+    background-color:white;
+}
+
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+  }
+   
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 94.7%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .banner {
+    padding-top: 60px;
+  }
+
+.main-footer {
+    color: #000;
+    /*background-color: #dc134c;*/
+    height: 75px;
+    justify-content: center;
+}
+
+.top-button {
+    margin: auto 20px;
+}
+
+.icon {
+    height: 50px;
+    margin: 12px 20px;
+}
+
+.trademark {
+    margin: auto 20px;
+}
+
+
+.my-image2 {
+    display: block;
+    height: 150px;
+    width: 110px;
+    border-radius: 50%;
+    margin-right: 10px;
+    float: left;
+    /*The float is required to make the text flow around the image
+    margin-right is used to create space between the image and the text*/
+}
+
+/* =================================
+ Projects image section
+==================================== */
+
+.projects,
+.row1,
+.project-images {
+    display: flex; 
+}
+
+.projects {
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #808080;
+}
+
+.project-title {
+    width: 100%;
+    /* The width of 100% keeps the projects column below the Welcome and Twitter columns in wider screen formats */
+    text-align: center;
+    background-color: #808080;
+    font-size: 2em;
+
+}
+
+.row1 {
+    flex-grow: 1;
+    justify-content: center;
+    /*background-color: rgb(247, 244, 107);*/
+    flex-direction: column;
+}
+
+.project-images {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenshot {
+    height: 150px ;
+    width: 150px;
+    margin: 15px;
+}
+
+a.link {
+    margin: 0px 10px 10px;
+    background-color: pink;
+}
+
+.font-tangerine{
+    font-family: 'Tangerine', serif, sans-serif;
+}
+
+.menu {
+    float: left;
+    margin-left: 3.5em;
+}
+
+/* =================================
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+
+    .main-header{
+		margin: 0 50px;
+	}
+
+    .main-header,
+    .main-nav,
+    .row
+     {
+        display: flex;
+    }
+
+ /* This allows the the projects column to be below the Welcome column and the Twitter column*/
+    .row {
+        flex-wrap: wrap;
+    }
+
+    /* this hides the menu button so it is only displayed when the screen is in its smallest size */
+    button.menu-button {
+        display: none;
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .primary {
+        flex: 2.5;
+        padding: 20px;
+    }
+
+    .banner {
+        flex-direction: row;
+        margin: 0px 50px;
+        padding: 10px;
+     }
+
+
+    .my-image {
+        margin-left: 20px;
+    }
+
+/* =================================
+ Projects image section in media query
+==================================== */
+
+    
+
+    .row1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .screenshot {
+        margin-left: 130px;
+        margin-right: 130px;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    
+    .main-header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .primary {
+       
+        /*This is the shorthand for flex-grow.  This is used to make the .p[rimary flex item 3.5 times larger than the .secondary and the .projects flex items.  The .projects flex item has had its width changed in a different location*/
+        flex: 3.5;
+    }
+
+}
+
+ /*The clearfix is used to keep containers from collapsing when a float is used*/
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media (max-width: 769px) {
+    
+    /* this makes the .welcome flex item sit below the image when in smaller screen sizes*/
+    .welcome {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+}
