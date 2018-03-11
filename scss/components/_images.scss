@@ -1,0 +1,35 @@
+//============================
+// Images
+//============================
+
+/*this is to make my image an oval and to allow it to be positioned in the center of the screen*/
+.my-image {
+    @include oval-image;
+}
+
+.project-images {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenshot {
+    height: 150px ;
+    width: 150px;
+    margin: 15px;
+}
+
+.my-image2 {
+    @include oval-image;
+    margin-right: 10px;
+    float: left;
+    /*The float is required to make the text flow around the image
+    margin-right is used to create space between the image and the text*/
+}
+
+
+
+
+
+
+
