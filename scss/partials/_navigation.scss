@@ -1,0 +1,55 @@
+
+//======================================
+/* ---- Navigation ---- */
+//======================================
+
+.main-header {
+  text-align: center;
+  background-color:white;
+}
+
+.name a{
+	font-size: .7em;
+	margin: 0;
+    color: #000;
+}
+
+.main-nav {
+    margin-top: 5px;
+    display: none;
+}
+
+
+.name a,
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+
+.main-nav a {
+	font-size: .8em;
+	color: #000;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+  }
+   
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 94.7%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .banner {
+    padding-top: 60px;
+  }

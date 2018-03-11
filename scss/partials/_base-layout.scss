@@ -1,0 +1,93 @@
+/* =================================
+  Base Layout Styles
+==================================== */
+
+/*using flexbox instead of floats to position my rows and columns
+I'm making the entire body a flex container and making the direction
+a column so everything is positioned for mobile first styling.
+The min-height is used for making a sticky footer with flexbox.
+100vh means the columns are as big as the browser and the footer
+is at the bottom even if there isn't enough content to fill the page.'*/
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*adds border around the navbar elements*/
+ul > li {
+    border: solid black;
+    margin-right: .3em;
+}
+
+input {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 1em;
+}
+
+p.explanation {
+    margin: 0;
+}
+
+.main-container {
+    flex: 1;
+}
+
+.navigation-banner {
+    background-color: $header-color;
+
+}
+
+
+
+.banner,
+.welcome,
+.main-footer {
+    display: flex;
+}
+
+
+/*this is to make my image an oval and to allow it to be positioned in the center of the screen*/
+.my-image {
+    @include oval-image;
+}
+
+.welcome{
+    flex-direction: column;
+}
+
+.banner {
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.primary {
+    padding: 20px;
+    flex-wrap: wrap;
+    border: solid black;    
+}
+
+.secondary {
+    padding: 20px;
+    border: solid black;
+    margin-left: .1em;
+}
+
+.secondary > h2 {
+    margin: auto;
+    text-align: center;
+}
+
+.twitter-timeline {
+    margin: auto;
+}
+
+
+/*adjusting the color of the text in the banner and the 2 columns of text*/
+.banner,
+.row {
+    color: #3a3a3a;
+}

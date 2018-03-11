@@ -1,0 +1,32 @@
+/* =================================
+  Base Element Styles
+==================================== */
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  line-height: 1.6;
+  margin: 0; }
+
+h1.name {
+  margin: 0; }
+h1.headline {
+  text-align: center;
+  font-size: 3em; }
+h1.project-gallery {
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+/*} this removes underlines and other markings from a list*/
+a {
+  text-decoration: none; }
+
+.tagline {
+  text-align: center; }
+
+/*# sourceMappingURL=base-element.css.map */

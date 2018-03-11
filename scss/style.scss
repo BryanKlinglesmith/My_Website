@@ -1,199 +1,20 @@
 // Imports from Partials
 @import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/base-element';
+@import 'partials/base-layout';
+@import 'partials/navigation';
 @import 'partials/image-modal';
 
 
-/* =================================
-  Base Element Styles
-==================================== */
-
-* {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Varela Round', sans-serif;
-	line-height: 1.6;
-    margin: 0;
-}
-
-h1 {
-    &.name {
-    margin: 0;
-    }//*This had to be added to get rid of the margin around Bryan Klinglesmith in the navagation bar to make it look even*/
-
-    &.headline{
-        text-align: center;
-        font-size: 3em;
-    }
-    
-    &.project-gallery{
-        margin: 0;
-    }
-}
 
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-/*} this removes underlines and other markings from a list*/
-a {
-    text-decoration: none;
-}
-
-.tagline {
-    text-align: center;
-}
 
 
-/* =================================
-  Base Layout Styles
-==================================== */
-
-/*using flexbox instead of floats to position my rows and columns
-I'm making the entire body a flex container and making the direction
-a column so everything is positioned for mobile first styling.
-The min-height is used for making a sticky footer with flexbox.
-100vh means the columns are as big as the browser and the footer
-is at the bottom even if there isn't enough content to fill the page.'*/
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/*adds border around the navbar elements*/
-ul > li {
-    border: solid black;
-    margin-right: .3em;
-}
-
-input {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-bottom: 1em;
-}
-
-p.explanation {
-    margin: 0;
-}
-
-.main-container {
-    flex: 1;
-}
-
-.banner,
-.welcome,
-.main-footer {
-    display: flex;
-}
 
 
-/*this is to make my image an oval and to allow it to be positioned in the center of the screen*/
-.my-image {
-    display: block;
-    height: 150px;
-    width: 110px;
-    border-radius: 50%;
-}
-
-.welcome{
-    flex-direction: column;
-}
-
-.banner {
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-
-.primary {
-    padding: 20px;
-    flex-wrap: wrap;
-    border: solid black;    
-}
-
-.secondary {
-    padding: 20px;
-    border: solid black;
-    margin-left: .1em;
-}
-
-.secondary > h2 {
-    margin: auto;
-    text-align: center;
-}
-
-.twitter-timeline {
-    margin: auto;
-}
-
-
-/*adjusting the color of the text in the banner and the 2 columns of text*/
-.banner,
-.row {
-    color: #3a3a3a;
-}
-
-/* ---- Navigation ---- */
-
-.name a{
-	font-size: .7em;
-	margin: 0;
-    color: #000;
-}
-
-.main-nav {
-    margin-top: 5px;
-    display: none;
-}
-
-
-.name a,
-.main-nav a {
-	text-align: center;
-	display: block;
-	padding: 10px 15px;
-}
-
-.main-nav a {
-	font-size: .8em;
-	color: #000;
-	text-transform: uppercase;
-}
-
-.main-nav a:hover {
-	color: #093a58;
-}
 
 /* ---- Layout Containers ---- */
-
-.main-header {
-    /* color: #fff; */
-    text-align: center;
-    background-color:white;
-}
-
-/* Style the navbar */
-#navbar {
-    overflow: hidden;
-  }
-   
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 94.7%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .banner {
-    padding-top: 60px;
-  }
 
 .main-footer {
     color: #000;
@@ -217,10 +38,7 @@ p.explanation {
 
 
 .my-image2 {
-    display: block;
-    height: 150px;
-    width: 110px;
-    border-radius: 50%;
+    @include oval-image;
     margin-right: 10px;
     float: left;
     /*The float is required to make the text flow around the image
