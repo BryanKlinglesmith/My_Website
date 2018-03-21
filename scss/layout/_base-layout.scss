@@ -32,3 +32,10 @@ p.explanation {
 .row {
     color: #3a3a3a;
 }
+
+ /*The clearfix is used to keep containers from collapsing when a float is used*/
+ .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}

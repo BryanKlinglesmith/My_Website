@@ -1,0 +1,66 @@
+
+/* =================================
+  Media Queries
+==================================== */
+
+@media (min-width: $break-m) {
+
+    .main-header{
+		padding: 0 50px;
+	}
+
+    .main-header,
+    .main-nav,
+    .row
+     {
+        display: flex;
+    }
+
+ /* This allows the the projects column to be below the Welcome column and the Twitter column*/
+    .row {
+        flex-wrap: wrap;
+    }
+
+    /* this hides the menu button so it is only displayed when the screen is in its smallest size */
+    button.menu-button {
+        display: none;
+    }
+
+    .main-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .primary {
+        flex: 2.5;
+        padding: 20px;
+    }
+
+    .banner {
+        flex-direction: row;
+        margin: 0px 50px;
+        padding: 10px;
+     }
+
+    .my-image {
+        margin-left: 20px;
+    }
+
+/* =================================
+ Projects image section in media query
+==================================== */
+
+    .row1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .screenshot {
+        margin-left: 130px;
+        margin-right: 130px;
+    }
+}

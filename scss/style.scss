@@ -6,7 +6,6 @@
 @import 'utilities/variables',
         'utilities/mixins';
 
-
 // Base Styles
 @import 'base/base-element';
 
@@ -15,6 +14,9 @@
         'layout/containers',
         'layout/navigation';
 
+// Fonts
+@import 'font/fonts';
+
 // Components
 @import 'components/buttons',
         'components/icons',
@@ -22,116 +24,6 @@
         'components/image-modal';
 
 // Media Queries
+@import 'media-queries/media-queries-medium',
+        'media-queries/media-queries-large';
 
-
-
-.font-tangerine{
-    font-family: 'Tangerine', serif, sans-serif;
-}
-
-
-
-/* =================================
-  Media Queries
-==================================== */
-
-@media (min-width: $break-m) {
-
-    .main-header{
-		padding: 0 50px;
-	}
-
-    .main-header,
-    .main-nav,
-    .row
-     {
-        display: flex;
-    }
-
- /* This allows the the projects column to be below the Welcome column and the Twitter column*/
-    .row {
-        flex-wrap: wrap;
-    }
-
-    /* this hides the menu button so it is only displayed when the screen is in its smallest size */
-    button.menu-button {
-        display: none;
-    }
-
-    .main-header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .col {
-        flex: 1;
-    }
-
-    .primary {
-        flex: 2.5;
-        padding: 20px;
-    }
-
-    .banner {
-        flex-direction: row;
-        margin: 0px 50px;
-        padding: 10px;
-     }
-
-
-    .my-image {
-        margin-left: 20px;
-    }
-
-/* =================================
- Projects image section in media query
-==================================== */
-
-    
-
-    .row1 {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .screenshot {
-        margin-left: 130px;
-        margin-right: 130px;
-    }
-
-}
-
-@media (min-width: $break-l) {
-    
-    .main-header{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .primary {
-       
-        /*This is the shorthand for flex-grow.  This is used to make the .p[rimary flex item 3.5 times larger than the .secondary and the .projects flex items.  The .projects flex item has had its width changed in a different location*/
-        flex: 3.5;
-    }
-
-}
-
- /*The clearfix is used to keep containers from collapsing when a float is used*/
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-@media (max-width: $break-m) {
-    
-    /* this makes the .welcome flex item sit below the image when in smaller screen sizes*/
-    .welcome {
-        width: 100%;
-    }
-
-    .modal-content {
-        width: 100%;
-    }
-
-}

@@ -5,8 +5,6 @@
   box-sizing: border-box; }
 
 body {
-  font-family: 'Varela Round', sans-serif;
-  line-height: 1.6;
   margin: 0; }
 
 h1.name {
@@ -54,6 +52,12 @@ p.explanation {
 .banner,
 .row {
   color: #3a3a3a; }
+
+/*The clearfix is used to keep containers from collapsing when a float is used*/
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 /*using flexbox instead of floats to position my rows and columns
 I'm making the entire body a flex container and making the direction
@@ -164,6 +168,16 @@ a.link {
 .sticky + .banner {
   padding-top: 60px; }
 
+/*==================================
+********* Fonts **********
+===================================*/
+body {
+  font-family: 'Varela Round', sans-serif;
+  line-height: 1.6; }
+
+.font-tangerine {
+  font-family: "Tangerine", serif, sans-serif; }
+
 input {
   border-radius: 5px;
   cursor: pointer;
@@ -268,9 +282,6 @@ input {
   text-decoration: none;
   cursor: pointer; }
 
-.font-tangerine {
-  font-family: 'Tangerine', serif, sans-serif; }
-
 /* =================================
   Media Queries
 ==================================== */
@@ -320,6 +331,9 @@ input {
   .screenshot {
     margin-left: 130px;
     margin-right: 130px; } }
+/* =================================
+  Media Queries
+==================================== */
 @media (min-width: 992px) {
   .main-header {
     flex-direction: row;
@@ -328,12 +342,6 @@ input {
   .primary {
     /*This is the shorthand for flex-grow.  This is used to make the .p[rimary flex item 3.5 times larger than the .secondary and the .projects flex items.  The .projects flex item has had its width changed in a different location*/
     flex: 3.5; } }
-/*The clearfix is used to keep containers from collapsing when a float is used*/
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table; }
-
 @media (max-width: 768px) {
   /* this makes the .welcome flex item sit below the image when in smaller screen sizes*/
   .welcome {

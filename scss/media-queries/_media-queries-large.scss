@@ -1,0 +1,34 @@
+
+/* =================================
+  Media Queries
+==================================== */
+
+
+
+@media (min-width: $break-l) {
+    
+    .main-header{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .primary {
+       
+        /*This is the shorthand for flex-grow.  This is used to make the .p[rimary flex item 3.5 times larger than the .secondary and the .projects flex items.  The .projects flex item has had its width changed in a different location*/
+        flex: 3.5;
+    }
+
+}
+
+@media (max-width: $break-m) {
+    
+    /* this makes the .welcome flex item sit below the image when in smaller screen sizes*/
+    .welcome {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 100%;
+    }
+
+}
